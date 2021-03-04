@@ -4,8 +4,8 @@ install.packages("openxlsx")
 library(FIACH)
 library(openxlsx)
 
-setwd("/Volumes/cerebro/Workspaces/Staff/Akiko_Mizuno/Public/KLU_fMRI/data")
-marker <- "/Volumes/cerebro/Workspaces/Staff/Akiko_Mizuno/Public/KLU_fMRI/data/"
+setwd("path")
+marker <- "path"
 cur_files <- list.dirs(full.name = FALSE, recursive = FALSE)
 print(cur_files)
 
@@ -77,16 +77,8 @@ for(i in 1:length(cur_files)){
 
 
 
+setwd("new path")
 
-setwd("/Volumes/cerebro/Workspaces/Staff/Akiko_Mizuno/Public/KLU_fMRI/misc")
-
-
-wb <- loadWorkbook("KLU_APC2_Master_2020_06_09_p011_AkikoCopy copy.xlsx")
+wb <- loadWorkbook("spreadsheet name")
 writeData(wb, sheet = "Sheet1", DF_calculation, startCol = "HY", startRow = 2, colNames = TRUE)
-saveWorkbook(wb,"KLU_APC2_Master_2020_06_09_p011_AkikoCopy copy.xlsx",overwrite = TRUE)
-
-
-
-# /CEREBRO/Studies/KLU_APC2/Public/Analysis/misc/FramewiseDisplacement/subject_list_1scan.txt
-# /CEREBRO/Studies/KLU_APC2/Public/Analysis/misc/FramewiseDisplacement/subject_list_2scans.txt
-# /CEREBRO/Studies/KLU_APC2/Public/Analysis/misc/FramewiseDisplacement/subject_list_2scans.txt
+saveWorkbook(wb,"spreadsheet name",overwrite = TRUE)
